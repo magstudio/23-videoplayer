@@ -38,7 +38,7 @@
 			import com.adobe.serialization.json.JSONParseError;
 			
 			// Default domain (used when testing from localhost)
-			private var defaultDomain:String = '23.dev.23video.com';
+			private var defaultDomain:String = 'scholz.23video.com';
 			// Default photo_id (used to if you want a specific photo/video to be shown, otherwise empty)
 			private var defaultPhotoId:String = '';
 			private var defaultAlbumId:String = '';
@@ -483,6 +483,12 @@
 			    		horizontalGap="2" 
 			    		resize="resizeProgressBar();"
 			    		> 
+						<!-- VolumeBar -->
+						<com:PlayerVolume
+							id="playerVolume"
+							targetVideo="{video}"
+							/>
+						
 			    		<!-- PlayListBtn -->
 			    		<com:PlayerButton id="playlistBtn" 
 			    			imageSource="@Embed(source='assets/buttons/expand-on.swf')"
@@ -512,18 +518,6 @@
 			    			imageSource="@Embed(source='assets/buttons/info.swf')"
 			    			visible="{(activeElement.get('hasInfo') as Boolean)}" 
 			    			click="infoToggle();"
-			    			/>
-
-						<!-- Mute and Unmute -->
-			    		<com:PlayerButton id="muteImage"
-			    			imageSource="@Embed(source='assets/buttons/mute-on.swf')"
-			    			visible="{videoControls.visible &amp;&amp; video.volume>0}" 
-			    			click="video.volume=0"
-			    			/>
-			    		<com:PlayerButton id="unmuteImage"
-			    			imageSource="@Embed(source='assets/buttons/mute-off.swf')"
-			    			visible="{videoControls.visible &amp;&amp; video.volume==0}" 
-			    			click="video.volume=1"
 			    			/>
 
 						<!-- Fullscreen -->

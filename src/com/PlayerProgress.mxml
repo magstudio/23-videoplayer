@@ -17,20 +17,24 @@
 	click="seekVideoTo((this.contentMouseX-5)/videoProgress.width*activeElement.getNumber('length'));" 
 	>
 	<!-- VideoProgress -->
-	<mx:Canvas id="videoProgress" 
+	<mx:Canvas
+		id="videoProgress" 
 		top="11" 
 		left="10" 
 		right="10" 
 		height="6" 
 		backgroundColor="0xCCCCCC" 
-		backgroundAlpha="0.6">
-		<mx:Canvas id="videoBufferProgress" 
+		backgroundAlpha="0.6"
+		>
+		<mx:Canvas
+			id="videoBufferProgress" 
 			x="0" 
 			height="6" 
 			backgroundColor="white" 
 			backgroundAlpha="0.2" 
 			/>
-		<mx:Canvas id="videoPlayProgress" 
+		<mx:Canvas
+			id="videoPlayProgress" 
 			x="0"
 			height="6" 
 			backgroundColor="{(StyleManager.getColorName(props.get('trayBackgroundColor')) as Number)}" 
